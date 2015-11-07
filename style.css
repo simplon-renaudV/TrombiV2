@@ -1,0 +1,49 @@
+.row
+{
+	position:relative;
+	width : 960px;
+	margin: 0 auto;
+	margin-left: 20%;
+}
+
+.row > div
+{
+	position:relative;
+	float : left;
+}
+
+.w-1 { width : 60px; }
+.w-2 { width : 140px; }
+.w-3 { width : 220px; }
+.w-4 { width : 300px; }
+.w-5 { width : 380px; }
+.w-6 { width : 460px; }
+.w-7 { width : 540px; }
+.w-8 { width : 620px; }
+.w-9 { width : 700px; }
+.w-10 { width : 780px; }
+.w-11 { width : 860px; }
+.w-12 { width : 940px; }
+
+.clear { clear : both ; }
+
+.img_simploniens
+{
+	position: relative;
+	padding: 5px;
+	max-width: 200px;
+	float: left;
+	z-index: 1;
+	filter: grayscale(1);
+}
+
+.img_simploniens:hover
+{
+	position: relative;
+	filter: grayscale(0);	
+	z-index: 9999;
+}
+p
+{
+	line-height: 75%;
+}
