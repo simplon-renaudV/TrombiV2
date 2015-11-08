@@ -48,6 +48,8 @@
                     <div><p class=\"p_trombi\">".$donnees['mail']."</p></div>
                     <div><p class=\"p_trombi\">".$tel."</p></div>
                     <div><p class=\"p_trombi\">".$date."</p></div>
+                    <div><a href=\"f_modifier.php?id=$id\"><img src=\"images/Modifier.png\" alt=\"Modifier\" title=\"Modifier\"/></a></div>           
+                    <div><a href=\"supprimer.php?id=$id\"><img src=\"images/Supprimer.png\" alt=\"Supprimer\" title=\"Supprimer\"/></a></div>
                   </div>
                 </div>";
                 
@@ -66,4 +68,4 @@
 
       ?>
     </body>
-  </html
+  </html>
