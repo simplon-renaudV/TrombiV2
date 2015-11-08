@@ -3,7 +3,6 @@
 	position:relative;
 	width : 960px;
 	margin: 0 auto;
-	margin-left: 20%;
 }
 
 .row > div
@@ -27,23 +26,99 @@
 
 .clear { clear : both ; }
 
+.img_grande
+{
+	margin-top: 10%;
+	max-width:90%;
+	border: 2px solid #ed1450;
+}
 .img_simploniens
 {
 	position: relative;
 	padding: 5px;
-	max-width: 200px;
+	max-width: 50%;
 	float: left;
-	z-index: 1;
-	filter: grayscale(1);
+	filter: sepia(1);
+	border: 2px solid #ed1450;
+	margin-top: 5px;
 }
 
 .img_simploniens:hover
 {
 	position: relative;
-	filter: grayscale(0);	
-	z-index: 9999;
+	filter: sepia(0);	
 }
-p
+
+.p_trombi
 {
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
 	line-height: 75%;
+	font-size: 1.1em;
+}
+
+.p_simplonien
+{
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
+	line-height: 75%;
+	font-size: 1.3em;
+}
+
+#t_simplonien
+{
+	padding-top: 5%;
+}
+
+body
+{
+	background-image: url(images/photo.JPG);
+}
+
+/*CSS pour tablettes*/
+
+@media only screen and (min-width:500px) and (max-width:980px) {
+	.row {
+		width : 100%;
+	}
+	.row > div { 
+		margin : 0 0.5%;
+	}
+	.w-1 { width : 7.3%; }
+	.w-2 { width : 15.6%; }
+	.w-3 { width : 24%; }
+	.w-4 { width : 32.3%; }
+	.w-5 { width : 40.6%; }
+	.w-6 { width : 49%; }
+	.w-7 { width : 57.3%; }
+	.w-8 { width : 65.6%; }
+	.w-9 { width : 74%; }
+	.w-10 { width : 82.3%; }
+	.w-11 { width : 90.6%; }
+	.w-12 { width : 99%; }
+
+	.p_trombi
+	{
+		font-size: 1em;
+	}
+}
+
+
+/*CSS pour mobiles*/
+@media only screen and (max-width:500px) {
+	.row {
+		width : 100%;
+	}
+	.row > div { 
+		margin : 0 1%;
+	}
+	.w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12 { 
+		width : 98%; 
+		float : none;
+	}
+
+	.p_trombi
+	{
+		font-size: 0.8em;
+	}
 }

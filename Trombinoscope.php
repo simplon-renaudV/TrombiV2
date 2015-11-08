@@ -5,6 +5,7 @@
       <meta charset="utf-8">
       <title>Trombinoscope</title>
       <link rel="stylesheet" href="style.css"/>
+      <link href='https://fonts.googleapis.com/css?family=Cabin:600italic' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
@@ -36,15 +37,17 @@
           
           $id=$donnees['id'];
           
+
+          // passage des variables $id, $tel et $date en paramètre via l'url
           echo "<div class=\"row\">
                   <div class=\"w-6\">
-                    <div><a href=\"simplonien.php?id=$id\"><img class=\"img_simploniens \"src=\"".$donnees['photo']."\"/></a></div>
-                    <div><p>".$donnees['prenom']."</p></div>
-                    <div><p>".$donnees['nom']."</p></div>
-                    <div><p><a href=\"".$donnees['cv']."\">CV</a></p></div>
-                    <div><p>".$donnees['mail']."</p></div>
-                    <div><p>".$tel."</p></div>
-                    <div><p>".$date."</p></div>
+                    <div><a href=\"simplonien.php?id=$id&tel=$tel&date=$date\"><img class=\"img_simploniens \"src=\"".$donnees['photo']."\" alt=\"".$donnees['prenom']." ".$donnees['nom']."\" title=\"".$donnees['prenom']." ".$donnees['nom']."\"/></a></div>
+                    <div><br /><p class=\"p_trombi\">".$donnees['prenom']."</p></div>
+                    <div><p class=\"p_trombi\">".$donnees['nom']."</p></div>
+                    <div><p class=\"p_trombi\"><a href=\"".$donnees['cv']."\">CV</a></p></div>
+                    <div><p class=\"p_trombi\">".$donnees['mail']."</p></div>
+                    <div><p class=\"p_trombi\">".$tel."</p></div>
+                    <div><p class=\"p_trombi\">".$date."</p></div>
                   </div>
                 </div>";
                 
