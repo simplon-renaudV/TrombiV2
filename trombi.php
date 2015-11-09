@@ -10,7 +10,7 @@
 
 			<?php
 				
-        include("../../configPDO.php"); //recupère les infos de connexions a la bdd
+        		include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
 				$nom = strtoupper($_POST['nom']);	//mets le nom en majuscule
 				$nom_photo = str_replace(" ", "_", $nom); //remplace les espaces par des _ dans l'addresse de la photo
@@ -23,8 +23,8 @@
 				//Teste la présence de la photo et si elle n'existe pas met comme lien dans la bdd PasDePhoto.JPG
 				if (!file_exists($lienphoto))		
 				{
-    			$lienphoto = "images/PasDePhoto.JPG";	
-    		}
+    				$lienphoto = "images/PasDePhoto.JPG";	
+    			}
 
 				$req = $bdd->prepare('INSERT INTO simploniens(nom, prenom, photo, cv, mail, telephone, naissance) VALUES (:nom, :prenom, :photo, :cv, :mail, :telephone, :naissance)');
 				$req->execute(array(
