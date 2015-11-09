@@ -13,7 +13,7 @@
         		include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
 				$nom = strtoupper($_POST['nom']);	//mets le nom en majuscule
-				$nom_photo = str_replace(" ", "_", $nom); //remplace les espaces par des _ dans l'addresse de la photo
+				$nom_photo = str_replace(" ", "_", $nom); //remplace les espaces par des _ dans l'addresse de la photo (utile pour les noms composés)
 
 				$prenom = strtolower($_POST['prenom']);	//mets le prénom en minuscule
 				$prenom = ucfirst($prenom);	//mets la première lettre du prénom en majuscule
