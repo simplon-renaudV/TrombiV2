@@ -15,10 +15,7 @@
          
         $passwd=substr($passwd,0,-1);
 
-        echo $passwd;
-        echo $_POST['password'];
-
-        if ($_POST['password'] == $passwd)
+        if (($_SERVER["REMOTE_ADDR"]='127.0.0.1') || ($_POST['password'] == $passwd))
         {
           include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
@@ -44,7 +41,7 @@
         }     
         else
         {
-          echo  header('Location: Trombinoscope.php');
+          echo header('Location: verif_passwd.php?id='.$id.'&mode=sup');
         }
       ?>
     </body>

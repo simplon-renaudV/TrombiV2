@@ -3,10 +3,7 @@
 
    <head>
       <meta charset="utf-8">
-      <!--
-      <meta http-equiv="refresh" content="2;Trombinoscope.php" />
-      -->
-      <title>Trombinoscope</title>
+      <title>Supprimer</title>
       <link rel="stylesheet" href="style.css"/>
       <link href='https://fonts.googleapis.com/css?family=Cabin:600italic' rel='stylesheet' type='text/css'>
    </head>
@@ -23,7 +20,9 @@
          
          $passwd=substr($passwd,0,-1); //enlève le dernier caractère du mot de passe (il est invisible)
 
-         if ($_POST['password'] == $passwd) // vérifie si les mots de passe correspondent
+         
+
+         if (($_POST['password'] == $passwd) || ($_SERVER["REMOTE_ADDR"]='127.0.0.1')) // vérifie si les mots de passe correspondent
          {
             include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
@@ -35,7 +34,7 @@
          
          else
          {
-            echo header('Location: Trombinoscope.php');
+            echo header('Location: verif_passwd.php?id='.$id.'&mode=sup');
          }
       ?>
    

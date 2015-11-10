@@ -35,6 +35,8 @@
 						'mail' => $_POST['mail'],
 						'telephone' => $_POST['telephone'],
 						'naissance' => $_POST['naissance']));
+
+				echo header('Location: Trombinoscope.php'); // redirection vers la page Trombinoscope.php   
 			?>
 		</body>
 	</html>

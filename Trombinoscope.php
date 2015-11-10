@@ -37,12 +37,19 @@
           
           $id=$donnees['id'];
           
-
           // passage des variables $id, $tel et $date en paramètre via l'url
           echo "<div class=\"row\">
-                  <div class=\"w-6\">
-                    <div><a href=\"simplonien.php?id=$id&tel=$tel&date=$date\"><img class=\"img_simploniens \"src=\"".$donnees['photo']."\" alt=\"".$donnees['prenom']." ".$donnees['nom']."\" title=\"".$donnees['prenom']." ".$donnees['nom']."\"/></a></div>
-                    <div><br /><p class=\"p_trombi\">".$donnees['prenom']."</p></div>
+                  <div class=\"w-6\">";
+                  
+                  if ($donnees['photo']!='images/PasDePhoto.JPG')
+                  {
+                    echo "<div><a href=\"simplonien.php?id=$id&tel=$tel&date=$date\"><img class=\"img_simploniens \"src=\"".$donnees['photo']."\" alt=\"".$donnees['prenom']." ".$donnees['nom']."\" title=\"".$donnees['prenom']." ".$donnees['nom']."\"/></a></div>";
+                  }
+                  else
+                  {
+                    echo "<div><a href=\"f_upload.php?id=$id\"><img class=\"img_simploniens \"src=\"".$donnees['photo']."\" alt=\"".$donnees['prenom']." ".$donnees['nom']."\" title=\"".$donnees['prenom']." ".$donnees['nom']."\"/></a></div>";
+                  }  
+                    echo "<div><br /><p class=\"p_trombi\">".$donnees['prenom']."</p></div>
                     <div><p class=\"p_trombi\">".$donnees['nom']."</p></div>
                     <div><p class=\"p_trombi\"><a href=\"".$donnees['cv']."\">CV</a></p></div>
                     <div><p class=\"p_trombi\">".$donnees['mail']."</p></div>
@@ -52,7 +59,6 @@
                     <div><a href=\"verif_passwd.php?id=$id&mode=sup\" class=\"boutons\"><img src=\"images/Supprimer.png\" alt=\"Supprimer\" title=\"Supprimer\"/></a></div>
                   </div>
                 </div>";
-                
           if ($colonne == 'droite')
           {
             echo "<p class=\"clear\"></p>";
