@@ -1,0 +1,94 @@
+.slideshow {
+   width: 550px;
+   height: 200px;
+   overflow: hidden;
+   border: 3px solid #F2F2F2;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.slideshow ul {
+    /* 5 images donc 5 x 100% donc a modifier si on rajoute des image 100 pour chaque image enplus*/
+   width: 500%;
+   height: 200px;
+   padding:0; margin:0;
+   list-style: none;
+}
+
+#logo{
+   float: left;
+    margin-left: 230px;
+    margin-top: 20px;
+
+}
+
+#logo2{
+    float: right;
+    margin-right: 5em;
+    margin-top: -75px;
+
+    
+    
+    
+}
+
+.slideshow li {
+   float: left;
+}
+
+//*fin du slideshow*//
+
+//* ecriture en haut *//
+
+
+h1 {
+	text-align:center;
+	margin-top:0;
+    margin-right: 0em;
+}
+h1 {
+	padding: 1em 0;
+	font-size: 2.9em;
+	font-family: 'Amaranth', Arial, Verdana, sans-serif;
+}
+h1 span {
+	display:block;
+	line-height: 1em;
+	font-size: 0.55em;
+    color:#A4A4A4;
+    margin-left: 20em;
+}
+h1 .cursive {
+	margin: 0 0 0 -3em;
+	font-size: 1.1em;
+	line-height:0.5em;
+	color: #bd9b83;
+    margin-left: 8em;
+}
+
+.cursive {
+	font-family: 'Mr Dafoe', cursive;
+}
+
+/*couleur html */
+html {
+	background-color: #e4dfd2;
+}
+
+/*footer*/
+
+footer {
+    
+	padding: 15px;
+	margin-bottom: 38px;
+	border: 2px solid rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.1);
+	color: #777;
+	text-align: center;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+

@@ -1,3 +1,5 @@
+<!-- Formulaire de modification dans la bdd -->
+
 <!DOCTYPE html>
   <html lang="fr">
 
@@ -10,11 +12,11 @@
       
       <?php
 
-        $f_passwd = fopen('../../mdpTrombi', 'r');
-        $passwd=fgets($f_passwd);
-         
-        $passwd=substr($passwd,0,-1);
-
+        $f_passwd = fopen('../../mdpTrombi', 'r'); //ouvre le fichier mdp en lecture
+        $passwd=fgets($f_passwd); //récupère le mot de passe dans le fichier
+        $passwd=substr($passwd,0,-1); // enlève le dernier caractère qui est caché
+        
+        //si l'utilisateur est local (ip 127.0.0.1) ou si les mots de passe correspondent on lance la requête
         if (($_SERVER["REMOTE_ADDR"]='127.0.0.1') || ($_POST['password'] == $passwd))
         {
           include("../../configPDO.php"); //recupère les infos de connexions a la bdd

@@ -11,12 +11,15 @@
     <body>
       <?php
         
+        include("Jquery/html.html"); // Bandeau de navigation 
+
         include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
         $t_simploniens = $bdd->query('SELECT * FROM simploniens ORDER BY nom');
         
         $colonne = 'gauche';
 
+        echo "<div id=\"fond\">";
         while ($donnees = $t_simploniens->fetch())
         {
           
@@ -38,6 +41,7 @@
           $id=$donnees['id'];
           
           // passage des variables $id, $tel et $date en paramètre via l'url
+          
           echo "<div class=\"row\">
                   <div class=\"w-6\">";
                   
@@ -72,6 +76,8 @@
 
         $t_simploniens->closeCursor(); 
 
+        echo "</div>";
+        include ("Jquery/foot.html");
       ?>
     </body>
   </html>
