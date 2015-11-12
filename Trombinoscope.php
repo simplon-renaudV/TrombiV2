@@ -77,7 +77,8 @@
         $t_simploniens->closeCursor(); 
 
         echo "</div>";
-        include ("Jquery/foot.html");
+
+        include ("Jquery/foot.html"); //Footer
       ?>
     </body>
   </html>
