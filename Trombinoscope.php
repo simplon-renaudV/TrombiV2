@@ -6,6 +6,8 @@
       <title>Trombinoscope</title>
       <link rel="stylesheet" href="style.css"/>
       <link href='https://fonts.googleapis.com/css?family=Cabin:600italic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
@@ -77,7 +79,8 @@
         $t_simploniens->closeCursor(); 
 
         echo "</div>";
-        include ("Jquery/foot.html");
+
+        include ("Jquery/foot.html"); //Footer
       ?>
     </body>
   </html>
