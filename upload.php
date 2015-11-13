@@ -1,3 +1,5 @@
+<!-- Page pour uploader une photo -->
+
 <?php
     include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
@@ -9,10 +11,10 @@
 
     while ($donnees = $t_simploniens->fetch())
     {
-    	$taille_maxi = 5000000;
-		$taille = filesize($_FILES['photo']['tmp_name']);
-		$extensions = array('.png', '.gif', '.jpg', '.jpeg', '.JPG');
-		$extension = strrchr($_FILES['photo']['name'], '.'); 
+    	$taille_maxi = 5000000; // taille maximum acceptée pour la photo en octets (5mo)
+		$taille = filesize($_FILES['photo']['tmp_name']); // taille de la photo
+		$extensions = array('.png', '.gif', '.jpg', '.jpeg', '.JPG'); //tableau contenant les extensions acceptées
+		$extension = strrchr($_FILES['photo']['name'], '.'); //récupération de l'extension du fichier
 		
 		//Début des vérifications de sécurité...
 		if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
@@ -29,11 +31,12 @@
 
 		if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
 		{		
-    		$tmp_name = $_FILES['photo']['tmp_name'];
-			$destination = 'images/';
-			$fichier = $donnees['prenom']."_".$donnees['nom'].".JPG";
-			move_uploaded_file($tmp_name, $destination.$fichier);
+    		$tmp_name = $_FILES['photo']['tmp_name']; // récupère le chemin temporaire du fichier uploadé
+			$destination = 'images/'; // répertoire de destination
+			$fichier = $donnees['prenom']."_".$donnees['nom'].".JPG"; // renommage du fichier 
+			move_uploaded_file($tmp_name, $destination.$fichier); // déplacement du fichier
 
+			// Modification de la bdd avec l'ajout du nouveau lien pour la photo
 			$req = $bdd->prepare('UPDATE simploniens SET photo=:photo WHERE id = :id');
 			$req->execute(array(
         			'photo' => $destination.$fichier,

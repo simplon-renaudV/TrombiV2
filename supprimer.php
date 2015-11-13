@@ -1,3 +1,5 @@
+<!-- Page servant à supprimer une personne de la bdd -->
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,6 +8,8 @@
       <title>Supprimer</title>
       <link rel="stylesheet" href="style.css"/>
       <link href='https://fonts.googleapis.com/css?family=Cabin:600italic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
    </head>
 
    <body>
@@ -21,8 +25,9 @@
          $passwd=substr($passwd,0,-1); //enlève le dernier caractère du mot de passe (il est invisible)
 
          
+        //si l'utilisateur est local (ip 127.0.0.1) ou si les mots de passe correspondent on lance la requête
 
-         if (($_POST['password'] == $passwd) || ($_SERVER["REMOTE_ADDR"]='127.0.0.1')) // vérifie si les mots de passe correspondent
+         if (($_POST['password'] == $passwd) || ($_SERVER["REMOTE_ADDR"]='127.0.0.1')) 
          {
             include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 

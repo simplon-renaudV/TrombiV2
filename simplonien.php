@@ -1,3 +1,5 @@
+<!--Page affichant en grand la photo et les informations d'un simplonien en particulier -->
+
 <!DOCTYPE html>
   <html lang="fr">
 
@@ -6,7 +8,8 @@
       <title>Simplonien</title>
       <link rel="stylesheet" href="style.css"/>
       <link href='https://fonts.googleapis.com/css?family=Cabin:600italic' rel='stylesheet' type='text/css'>
-
+      <link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
@@ -16,6 +19,8 @@
 
         /* Les variables $_GET['id'], $_GET['tel'] et $_GET['date'] ont été récupérés depuis
         la page Trombinoscope.php via l'url*/
+
+        include("Jquery/html.html"); // Bandeau de navigation 
 
         $t_simploniens = $bdd->prepare('SELECT * FROM simploniens WHERE id=:id');
         $t_simploniens->execute(array('id' => $_GET['id']));
@@ -42,6 +47,7 @@
           echo "<p class=\"clear\"></p>";
         }
 
+        include ("Jquery/foot.html"); //Footer
       ?>
     </body>
   </html>

@@ -6,11 +6,17 @@
     <head>
       <meta charset="utf-8">
       <title>Modifier</title>
+      <link rel="stylesheet" href="style.css"/>
+      <link href='https://fonts.googleapis.com/css?family=Cabin:600italic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
       
       <?php
+
+        include("Jquery/html.html"); // Bandeau de navigation
 
         $f_passwd = fopen('../../mdpTrombi', 'r'); //ouvre le fichier mdp en lecture
         $passwd=fgets($f_passwd); //récupère le mot de passe dans le fichier
@@ -45,6 +51,9 @@
         {
           echo header('Location: verif_passwd.php?id='.$id.'&mode=sup');
         }
+      
+        include ("Jquery/foot.html"); //Footer
+      
       ?>
     </body>
   </html>

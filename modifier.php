@@ -1,7 +1,5 @@
-<meta http-equiv="refresh" content="2;Trombinoscope.php" />
-
+<!-- Page de modification des personnes dans la bdd -->
 <?php
-    
     include("../../configPDO.php"); //recupère les infos de connexions a la bdd
 
     $nom = strtoupper($_POST['nom']);	//mets le nom en majuscule

@@ -1,3 +1,5 @@
+<!-- Page pour ajouter une personne à la bdd -->
+
 <!DOCTYPE html>
 	<html lang="fr">
 
